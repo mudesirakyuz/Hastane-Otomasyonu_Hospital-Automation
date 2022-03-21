@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="VeritabaniConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="VeritabaniConnectionString1 (Settings)" PropertyReference="ApplicationSettings.Hastane_Otomasyonu.Properties.Settings.GlobalReference.Default.VeritabaniConnectionString1" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="VeritabaniConnectionString3" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="VeritabaniConnectionString3 (Settings)" PropertyReference="ApplicationSettings.Hastane_Otomasyonu.Properties.Settings.GlobalReference.Default.VeritabaniConnectionString3" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="VeritabaniConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Ilaclar.ilac_adi, Ilaclar.kullanim_amaci, Ilaclar.yan_etkileri, Ilaclar.fiyat, Ilaclar.gramaj, Ilaclar.adet, Ilaclar.ut, Ilaclar.skt, Firma.firma_ad
+FROM     (Firma INNER JOIN
+                  Ilaclar ON Firma.firma_id = Ilaclar.firma_id)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ilac_adi" DataSetColumn="ilac_adi" />
+              <Mapping SourceColumn="kullanim_amaci" DataSetColumn="kullanim_amaci" />
+              <Mapping SourceColumn="yan_etkileri" DataSetColumn="yan_etkileri" />
+              <Mapping SourceColumn="fiyat" DataSetColumn="fiyat" />
+              <Mapping SourceColumn="gramaj" DataSetColumn="gramaj" />
+              <Mapping SourceColumn="adet" DataSetColumn="adet" />
+              <Mapping SourceColumn="ut" DataSetColumn="ut" />
+              <Mapping SourceColumn="skt" DataSetColumn="skt" />
+              <Mapping SourceColumn="firma_ad" DataSetColumn="firma_ad" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HastaTableAdapter" GeneratorDataComponentClassName="HastaTableAdapter" Name="Hasta" UserDataComponentName="HastaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="VeritabaniConnectionString3 (Settings)" DbObjectName="Hasta" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `Hasta` WHERE ((`hasta_tc` = ?) AND ((? = 1 AND `hasta_ad` IS NULL) OR (`hasta_ad` = ?)) AND ((? = 1 AND `hasta_soyad` IS NULL) OR (`hasta_soyad` = ?)) AND ((? = 1 AND `hasta_tel` IS NULL) OR (`hasta_tel` = ?)) AND ((? = 1 AND `hasta_dtarih` IS NULL) OR (`hasta_dtarih` = ?)) AND ((? = 1 AND `dogum_yeri` IS NULL) OR (`dogum_yeri` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_hasta_tc" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="hasta_tc" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_hasta_ad" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="hasta_ad" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_hasta_ad" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="hasta_ad" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_hasta_soyad" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="hasta_soyad" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_hasta_soyad" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="hasta_soyad" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_hasta_tel" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="hasta_tel" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_hasta_tel" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="hasta_tel" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_hasta_dtarih" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="hasta_dtarih" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_hasta_dtarih" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="hasta_dtarih" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_dogum_yeri" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="dogum_yeri" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_dogum_yeri" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="dogum_yeri" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `Hasta` (`hasta_tc`, `hasta_ad`, `hasta_soyad`, `hasta_tel`, `hasta_dtarih`, `dogum_yeri`) VALUES (?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="hasta_tc" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="hasta_tc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="hasta_ad" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="hasta_ad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="hasta_soyad" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="hasta_soyad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="hasta_tel" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="hasta_tel" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="hasta_dtarih" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="hasta_dtarih" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="dogum_yeri" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="dogum_yeri" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT hasta_tc, hasta_ad, hasta_soyad, hasta_tel, hasta_dtarih, dogum_yeri
+FROM     Hasta</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `Hasta` SET `hasta_tc` = ?, `hasta_ad` = ?, `hasta_soyad` = ?, `hasta_tel` = ?, `hasta_dtarih` = ?, `dogum_yeri` = ? WHERE ((`hasta_tc` = ?) AND ((? = 1 AND `hasta_ad` IS NULL) OR (`hasta_ad` = ?)) AND ((? = 1 AND `hasta_soyad` IS NULL) OR (`hasta_soyad` = ?)) AND ((? = 1 AND `hasta_tel` IS NULL) OR (`hasta_tel` = ?)) AND ((? = 1 AND `hasta_dtarih` IS NULL) OR (`hasta_dtarih` = ?)) AND ((? = 1 AND `dogum_yeri` IS NULL) OR (`dogum_yeri` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="hasta_tc" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="hasta_tc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="hasta_ad" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="hasta_ad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="hasta_soyad" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="hasta_soyad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="hasta_tel" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="hasta_tel" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="hasta_dtarih" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="hasta_dtarih" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="dogum_yeri" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="dogum_yeri" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_hasta_tc" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="hasta_tc" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_hasta_ad" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="hasta_ad" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_hasta_ad" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="hasta_ad" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_hasta_soyad" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="hasta_soyad" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_hasta_soyad" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="hasta_soyad" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_hasta_tel" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="hasta_tel" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_hasta_tel" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="hasta_tel" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_hasta_dtarih" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="hasta_dtarih" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_hasta_dtarih" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="hasta_dtarih" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_dogum_yeri" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="dogum_yeri" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_dogum_yeri" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="dogum_yeri" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="hasta_tc" DataSetColumn="hasta_tc" />
+              <Mapping SourceColumn="hasta_ad" DataSetColumn="hasta_ad" />
+              <Mapping SourceColumn="hasta_soyad" DataSetColumn="hasta_soyad" />
+              <Mapping SourceColumn="hasta_tel" DataSetColumn="hasta_tel" />
+              <Mapping SourceColumn="hasta_dtarih" DataSetColumn="hasta_dtarih" />
+              <Mapping SourceColumn="dogum_yeri" DataSetColumn="dogum_yeri" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ilac_adi" msprop:Generator_ColumnVarNameInTable="columnilac_adi" msprop:Generator_ColumnPropNameInRow="ilac_adi" msprop:Generator_ColumnPropNameInTable="ilac_adiColumn" msprop:Generator_UserColumnName="ilac_adi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="kullanim_amaci" msprop:Generator_ColumnVarNameInTable="columnkullanim_amaci" msprop:Generator_ColumnPropNameInRow="kullanim_amaci" msprop:Generator_ColumnPropNameInTable="kullanim_amaciColumn" msprop:Generator_UserColumnName="kullanim_amaci" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="yan_etkileri" msprop:Generator_ColumnVarNameInTable="columnyan_etkileri" msprop:Generator_ColumnPropNameInRow="yan_etkileri" msprop:Generator_ColumnPropNameInTable="yan_etkileriColumn" msprop:Generator_UserColumnName="yan_etkileri" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fiyat" msprop:Generator_ColumnVarNameInTable="columnfiyat" msprop:Generator_ColumnPropNameInRow="fiyat" msprop:Generator_ColumnPropNameInTable="fiyatColumn" msprop:Generator_UserColumnName="fiyat" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="gramaj" msprop:Generator_ColumnVarNameInTable="columngramaj" msprop:Generator_ColumnPropNameInRow="gramaj" msprop:Generator_ColumnPropNameInTable="gramajColumn" msprop:Generator_UserColumnName="gramaj" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="adet" msprop:Generator_ColumnVarNameInTable="columnadet" msprop:Generator_ColumnPropNameInRow="adet" msprop:Generator_ColumnPropNameInTable="adetColumn" msprop:Generator_UserColumnName="adet" type="xs:int" minOccurs="0" />
+              <xs:element name="ut" msprop:Generator_ColumnVarNameInTable="columnut" msprop:Generator_ColumnPropNameInRow="ut" msprop:Generator_ColumnPropNameInTable="utColumn" msprop:Generator_UserColumnName="ut" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="skt" msprop:Generator_ColumnVarNameInTable="columnskt" msprop:Generator_ColumnPropNameInRow="skt" msprop:Generator_ColumnPropNameInTable="sktColumn" msprop:Generator_UserColumnName="skt" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="firma_ad" msprop:Generator_ColumnVarNameInTable="columnfirma_ad" msprop:Generator_ColumnPropNameInRow="firma_ad" msprop:Generator_ColumnPropNameInTable="firma_adColumn" msprop:Generator_UserColumnName="firma_ad" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Hasta" msprop:Generator_TableClassName="HastaDataTable" msprop:Generator_TableVarName="tableHasta" msprop:Generator_TablePropName="Hasta" msprop:Generator_RowDeletingName="HastaRowDeleting" msprop:Generator_RowChangingName="HastaRowChanging" msprop:Generator_RowEvHandlerName="HastaRowChangeEventHandler" msprop:Generator_RowDeletedName="HastaRowDeleted" msprop:Generator_UserTableName="Hasta" msprop:Generator_RowChangedName="HastaRowChanged" msprop:Generator_RowEvArgName="HastaRowChangeEvent" msprop:Generator_RowClassName="HastaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="hasta_tc" msprop:Generator_ColumnVarNameInTable="columnhasta_tc" msprop:Generator_ColumnPropNameInRow="hasta_tc" msprop:Generator_ColumnPropNameInTable="hasta_tcColumn" msprop:Generator_UserColumnName="hasta_tc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hasta_ad" msprop:Generator_ColumnVarNameInTable="columnhasta_ad" msprop:Generator_ColumnPropNameInRow="hasta_ad" msprop:Generator_ColumnPropNameInTable="hasta_adColumn" msprop:Generator_UserColumnName="hasta_ad" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hasta_soyad" msprop:Generator_ColumnVarNameInTable="columnhasta_soyad" msprop:Generator_ColumnPropNameInRow="hasta_soyad" msprop:Generator_ColumnPropNameInTable="hasta_soyadColumn" msprop:Generator_UserColumnName="hasta_soyad" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hasta_tel" msprop:Generator_ColumnVarNameInTable="columnhasta_tel" msprop:Generator_ColumnPropNameInRow="hasta_tel" msprop:Generator_ColumnPropNameInTable="hasta_telColumn" msprop:Generator_UserColumnName="hasta_tel" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hasta_dtarih" msprop:Generator_ColumnVarNameInTable="columnhasta_dtarih" msprop:Generator_ColumnPropNameInRow="hasta_dtarih" msprop:Generator_ColumnPropNameInTable="hasta_dtarihColumn" msprop:Generator_UserColumnName="hasta_dtarih" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dogum_yeri" msprop:Generator_ColumnVarNameInTable="columndogum_yeri" msprop:Generator_ColumnPropNameInRow="dogum_yeri" msprop:Generator_ColumnPropNameInTable="dogum_yeriColumn" msprop:Generator_UserColumnName="dogum_yeri" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Hasta" />
+      <xs:field xpath="mstns:hasta_tc" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
